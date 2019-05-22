@@ -1,0 +1,31 @@
+
+      <app-temple (childDataevent)="getData($event)"></app-temple>
+
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h3>子傳父</h3>
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of parent_username1 | slice:1; let i = index;" >
+                      <th scope="row">{{i}}</th>
+                      <td [(ngModel)]="item.firstName" ngDefaultControl>{{item.firstName}}</td>
+                      <td [(ngModel)]="item.lastName" ngDefaultControl>{{item.lastName}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
